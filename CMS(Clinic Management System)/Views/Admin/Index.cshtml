@@ -1,0 +1,402 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="~/css/admin.css" rel="stylesheet" />
+
+<style>
+    
+</style>
+
+<div class="dashboard-container">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <h1>Welcome to Admin Dashboard</h1>
+            <p>Clinic Management System - Complete Control Panel</p>
+        </div>
+        <div class="date-time">
+            <div class="date">@DateTime.Now.ToString("dddd, MMMM dd, yyyy")</div>
+            <div class="time">@DateTime.Now.ToString("hh:mm tt")</div>
+        </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon cyan">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span class="stat-change">+12%</span>
+            </div>
+            <div class="stat-label">Total Clients</div>
+            <div class="stat-value">1,234</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon blue">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <span class="stat-change">+8%</span>
+            </div>
+            <div class="stat-label">Scientific Equipment</div>
+            <div class="stat-value">156</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon teal">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <span class="stat-change">+23%</span>
+            </div>
+            <div class="stat-label">Medicines</div>
+            <div class="stat-value">2,456</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon emerald">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <span class="stat-change">+15%</span>
+            </div>
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-value">PKR 2.4M</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon purple">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <span class="stat-change">+18%</span>
+            </div>
+            <div class="stat-label">Online Orders</div>
+            <div class="stat-value">345</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-icon orange">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="stat-change">+5%</span>
+            </div>
+            <div class="stat-label">Education Sessions</div>
+            <div class="stat-value">78</div>
+        </div>
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div class="quick-actions-section">
+        <div class="section-header">
+            <h2>Quick Actions</h2>
+        </div>
+        <div class="quick-actions-grid">
+            <a href="@Url.Action("Create", "Client")" class="action-card">
+                <div class="action-info">
+                    <h3>Add Client</h3>
+                    <p>Register new clinic</p>
+                </div>
+                <i class="fas fa-user-plus action-icon"></i>
+            </a>
+
+            <a href="@Url.Action("Create", "Scientific")" class="action-card blue">
+                <div class="action-info">
+                    <h3>Add Equipment</h3>
+                    <p>Scientific apparatus</p>
+                </div>
+                <i class="fas fa-microscope action-icon"></i>
+            </a>
+
+            <a href="@Url.Action("Create", "Medicines")" class="action-card teal">
+                <div class="action-info">
+                    <h3>Add Medicine</h3>
+                    <p>Update inventory</p>
+                </div>
+                <i class="fas fa-pills action-icon"></i>
+            </a>
+
+            <a href="@Url.Action("Create", "Education")" class="action-card purple">
+                <div class="action-info">
+                    <h3>Schedule Session</h3>
+                    <p>Lectures & seminars</p>
+                </div>
+                <i class="fas fa-calendar-plus action-icon"></i>
+            </a>
+
+            <a href="@Url.Action("Index", "Orders")" class="action-card orange">
+                <div class="action-info">
+                    <h3>View Orders</h3>
+                    <p>Online transactions</p>
+                </div>
+                <i class="fas fa-shopping-bag action-icon"></i>
+            </a>
+
+            <a href="@Url.Action("Index", "Reports")" class="action-card emerald">
+                <div class="action-info">
+                    <h3>Generate Report</h3>
+                    <p>Business analytics</p>
+                </div>
+                <i class="fas fa-file-chart-line action-icon"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Content Grid -->
+    <div class="content-grid">
+        <!-- Recent Orders Table -->
+        <div class="table-section">
+            <div class="table-header">
+                <h3>Recent Online Orders</h3>
+                <a href="/Admin/Orders/Index" class="view-all-btn">View All →</a>
+            </div>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Client</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>#ORD-001</strong></td>
+                        <td>City Hospital</td>
+                        <td><strong>PKR 45,000</strong></td>
+                        <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#ORD-002</strong></td>
+                        <td>Health Clinic</td>
+                        <td><strong>PKR 28,500</strong></td>
+                        <td><span class="status-badge status-pending">Pending</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#ORD-003</strong></td>
+                        <td>Medical Center</td>
+                        <td><strong>PKR 67,200</strong></td>
+                        <td><span class="status-badge status-completed">Completed</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#ORD-004</strong></td>
+                        <td>Care Hospital</td>
+                        <td><strong>PKR 31,800</strong></td>
+                        <td><span class="status-badge status-pending">Pending</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                                <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="table-section">
+            <div class="table-header">
+                <h3>Recent Activity</h3>
+                <a href="/Admin/Activity/Index" class="view-all-btn">View All →</a>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon cyan" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="activity-content">
+                    <h4>New Client Registered</h4>
+                    <p>City Hospital registered successfully</p>
+                </div>
+                <div class="activity-time">2 min ago</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon blue" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="activity-content">
+                    <h4>New Order Placed</h4>
+                    <p>Order #ORD-004 - PKR 31,800</p>
+                </div>
+                <div class="activity-time">15 min ago</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon teal" style="background: linear-gradient(135deg, #14b8a6, #0d9488);">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <div class="activity-content">
+                    <h4>Medicine Added</h4>
+                    <p>Paracetamol 500mg added to inventory</p>
+                </div>
+                <div class="activity-time">1 hour ago</div>
+            </div>
+            <div class="activity-item">
+                <div class="activity-icon purple" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="activity-content">
+                    <h4>Seminar Scheduled</h4>
+                    <p>Medical Equipment Training - March 15</p>
+                </div>
+                <div class="activity-time">3 hours ago</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scientific Equipment & Medicines -->
+    <div class="content-grid">
+        <!-- Low Stock Items -->
+        <div class="table-section">
+            <div class="table-header">
+                <h3>Low Stock Alert</h3>
+                <a href="/Admin/Medicines/Index" class="view-all-btn">View All →</a>
+            </div>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Type</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Surgical Gloves</strong></td>
+                        <td>Medical Supply</td>
+                        <td><span class="status-badge status-low">15 units</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon edit"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Blood Pressure Monitor</strong></td>
+                        <td>Equipment</td>
+                        <td><span class="status-badge status-medium">8 units</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon edit"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paracetamol 500mg</strong></td>
+                        <td>Medicine</td>
+                        <td><span class="status-badge status-medium">45 units</span></td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="btn-icon edit"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Revenue Chart Placeholder -->
+        <div class="chart-card">
+            <div class="chart-header">
+                <h3>Revenue Overview</h3>
+            </div>
+            <div class="chart-placeholder">
+                <div style="text-align: center;">
+                    <i class="fas fa-chart-area" style="font-size: 48px; margin-bottom: 12px; opacity: 0.5;"></i>
+                    <p>Revenue Chart will be displayed here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Sessions -->
+    <div class="table-section">
+        <div class="table-header">
+            <h3>Upcoming Education Sessions</h3>
+            <a href="/Admin/Education/Index" class="view-all-btn">View All →</a>
+        </div>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Session Title</th>
+                    <th>Type</th>
+                    <th>Date & Time</th>
+                    <th>Instructor</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ECG Machine Operation</strong></td>
+                    <td>Practical Training</td>
+                    <td>March 15, 2024 - 10:00 AM</td>
+                    <td>Dr. Ahmed Khan</td>
+                    <td><span class="status-badge status-confirmed">Scheduled</span></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Medical Equipment Seminar</strong></td>
+                    <td>Seminar</td>
+                    <td>March 18, 2024 - 02:00 PM</td>
+                    <td>Dr. Sarah Ali</td>
+                    <td><span class="status-badge status-confirmed">Scheduled</span></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Pharmacy Management Lecture</strong></td>
+                    <td>Lecture</td>
+                    <td>March 20, 2024 - 11:00 AM</td>
+                    <td>Prof. Hassan Malik</td>
+                    <td><span class="status-badge status-pending">Pending</span></td>
+                    <td>
+                        <div class="action-btns">
+                            <button class="btn-icon view"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon edit"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

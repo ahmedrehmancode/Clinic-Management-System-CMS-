@@ -1,0 +1,139 @@
+﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+
+.admin-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.admin-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .admin-toggle:hover {
+        background-color: #f8f9fa;
+    }
+
+.admin-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.admin-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 15px;
+    margin: 0;
+}
+
+.admin-role {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 0;
+}
+
+.dropdown-arrow {
+    color: #9ca3af;
+    transition: transform 0.2s;
+    font-size: 18px;
+}
+
+.admin-toggle[aria-expanded="true"] .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    margin-top: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-width: 200px;
+}
+
+.dropdown-item {
+    padding: 10px 16px;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+    .dropdown-item:hover {
+        background-color: #f3f4f6;
+        color: #111827;
+    }
+
+    .dropdown-item:active {
+        background-color: #e5e7eb;
+    }
+
+.dropdown-divider {
+    margin: 4px 0;
+}
