@@ -35,7 +35,7 @@ namespace CMS_Clinic_Management_System_.Controllers
             }
             return View();
         }
-        public IActionResult logout()
+        public IActionResult adminlogout()
         {
             if (HttpContext.Session.GetString("adminid") == null)
             {
@@ -44,8 +44,19 @@ namespace CMS_Clinic_Management_System_.Controllers
             }
             else
             {
-                return RedirectToAction("login","auth");
+                return RedirectToAction("adminlogin","auth");
             }
+            return View();
+        }
+
+
+        public IActionResult UserLogin()
+        {
+            return View();
+        }
+
+        public IActionResult UserSignUp()
+        {
             return View();
         }
     }

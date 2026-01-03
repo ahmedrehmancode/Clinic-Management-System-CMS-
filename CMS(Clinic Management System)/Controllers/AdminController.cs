@@ -17,6 +17,7 @@ namespace e_project.Controllers
         {
             if (HttpContext.Session.GetString("adminid") == null)
             {
+                
 
                 return RedirectToAction("login");
             }

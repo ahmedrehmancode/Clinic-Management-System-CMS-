@@ -362,7 +362,7 @@
 
                 <!-- Email field -->
                 <div class="form-group">
-                    <label class="form-label" for="email">Admin Email Address</label>
+                    <label class="form-label" for="email">User Email Address</label>
                     <div class="input-wrapper">
                         <i class="fas fa-envelope input-icon"></i>
                         <input type="email"
@@ -378,7 +378,7 @@
 
                 <!-- Password field -->
                 <div class="form-group">
-                    <label class="form-label" for="password">Admin Password</label>
+                    <label class="form-label" for="password">User Password</label>
                     <div class="input-wrapper">
                         <i class="fas fa-lock input-icon"></i>
                         <input type="password"
@@ -407,6 +407,9 @@
                     <span>Sign In</span>
                 </button>
             </form>
+            <div class="mt-2">
+                <a href="@Url.Action("usersignup","auth")">Don't have an account yet? Sign Up</a>
+            </div>
 
             <!-- Footer -->
             <div class="footer">

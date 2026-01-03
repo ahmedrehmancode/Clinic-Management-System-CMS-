@@ -340,13 +340,13 @@
         <div class="login-card">
             <!-- Logo -->
             <div class="logo-container">
-                <img src="~/images/logo.png" alt="Clinic Management System Logo" class="logo-img">
+                <img src="~/images/logo.png"  alt="Clinic Management System Logo" class="logo-img">
             </div>
 
             <!-- Header -->
             <div class="header-section">
-                <h1 class="title">Welcome Back</h1>
-                <p class="subtitle">Sign in to access your account</p>
+                <h1 class="title">Welcome</h1>
+                <p class="subtitle">Create an account</p>
             </div>
 
             <!-- Form -->
@@ -360,9 +360,25 @@
                     </div>
                 }
 
+                <!-- Name field -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Name</label>
+                    <div class="input-wrapper">
+                        <i class="fa fa-user input-icon"></i>
+                        <input type="text"
+                               class="form-control"
+                               id="email"
+                               name="Email"
+                               placeholder="Enter your name"
+                               autocomplete="email"
+                               required
+                               aria-label="Email address">
+                    </div>
+                </div>
+
                 <!-- Email field -->
                 <div class="form-group">
-                    <label class="form-label" for="email">Admin Email Address</label>
+                    <label class="form-label" for="email">User Email Address</label>
                     <div class="input-wrapper">
                         <i class="fas fa-envelope input-icon"></i>
                         <input type="email"
@@ -378,7 +394,7 @@
 
                 <!-- Password field -->
                 <div class="form-group">
-                    <label class="form-label" for="password">Admin Password</label>
+                    <label class="form-label" for="password">User Password</label>
                     <div class="input-wrapper">
                         <i class="fas fa-lock input-icon"></i>
                         <input type="password"
@@ -407,6 +423,9 @@
                     <span>Sign In</span>
                 </button>
             </form>
+            <div class="mt-2">
+                <a href="">Don't have an account yet? Sign Up</a>
+            </div>
 
             <!-- Footer -->
             <div class="footer">
