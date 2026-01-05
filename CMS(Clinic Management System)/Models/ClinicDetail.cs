@@ -4,7 +4,7 @@ using System.Transactions;
 
 namespace CMS_Clinic_Management_System_.Models
 {
-    public class Clinic
+    public class ClinicDetail
     {
         // ye data clinic table k le
         [Key]
@@ -14,14 +14,9 @@ namespace CMS_Clinic_Management_System_.Models
         public string ClinicName { get; set;  }
 
         [Required(ErrorMessage = "Enter Clinic Address")]
-        public string ClinicAddress { get; set; }
-        [Required(ErrorMessage = "Enter Contact Number")]
-        public string ContactNumber { get; set; }
+        public string Address { get; set; }
 
-        // ye data login table k le
-        [Required(ErrorMessage ="Enter Your Email")]
-        public string Email { get; set; }
-        [Required(ErrorMessage = "Enter Your Password")]
-        public string Passowrd { get; set; }
+        // virtual k clinic details ko user tk le jainge
+        public virtual User User { get; set; }
     }
 }
