@@ -278,6 +278,44 @@
                 transform: translateY(0);
             }
 
+        .con_signIn {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            align-content: center;
+            justify-content: start;
+            /* height:50px; */
+            /* border:solid 1px; */
+        }
+
+            .con_signIn p {
+                margin-top: 10px;
+                font-size:14px;
+            }
+
+        .btn_signIn {
+            width: 23%;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* gap: 8px; */
+            box-shadow: 0 4px 6px -1px var(--shadow);
+        }
+
+            .btn_signIn a {
+                color: white;
+                text-decoration: none; 
+                gap: 8px;
+            }
+
         /* Footer */
         .footer {
             margin-top: 32px;
@@ -407,8 +445,11 @@
                     <span>Sign In</span>
                 </button>
             </form>
-            <div class="mt-2">
-                <a href="@Url.Action("usersignup","auth")">Don't have an account yet? Sign Up</a>
+            <div class="mt-2 con_signIn">
+                <p>don't have an account! yet</p>
+                <button class="btn_signIn"><a href="@Url.Action("usersignup", "auth")"> <i class="fas fa-registered"></i> Register</a></button>
+
+
             </div>
 
             <!-- Footer -->

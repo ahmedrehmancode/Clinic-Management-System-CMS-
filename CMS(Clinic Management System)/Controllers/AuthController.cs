@@ -1,4 +1,6 @@
-﻿using CMS_Clinic_Management_System_.Models;
+﻿using AspNetCoreGeneratedDocument;
+using CMS_Clinic_Management_System_.Models;
+using CMS_Clinic_Management_System_.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMS_Clinic_Management_System_.Controllers
@@ -59,5 +61,19 @@ namespace CMS_Clinic_Management_System_.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult UserSignUp(SignupVM model)
+        {
+            if (ModelState.IsValid) { 
+                var clinic = new ClinicDetail { 
+                 ClinicName = model.ClinicName,
+                Address = model.Address,
+                Phone = model.Phone};
+}
+            
+
+            return View();
+        }
+
     }
 }

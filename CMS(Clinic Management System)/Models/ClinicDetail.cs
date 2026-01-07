@@ -16,6 +16,9 @@ namespace CMS_Clinic_Management_System_.Models
         [Required(ErrorMessage = "Enter Clinic Address")]
         public string Address { get; set; }
 
+        [Required(ErrorMessage = "Enter Clinic Phone")]
+        public string Phone { get; set; }
+
         // virtual k clinic details ko user tk le jainge
         public virtual User User { get; set; }
     }
