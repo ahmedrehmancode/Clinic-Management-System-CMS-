@@ -12,7 +12,7 @@ namespace CMS_Clinic_Management_System_.Models
         [Required]
         public string UserEmail { get; set; }
         [Required]
-        public string UserPassowrd { get; set; }
+        public string UserPassword { get; set; }
         [Required]
         public string Role { get; set; }
 
@@ -22,6 +22,6 @@ namespace CMS_Clinic_Management_System_.Models
         [ForeignKey("ClinicId")]
         public virtual ClinicDetail ClinicDetail { get; set; }
 
-
+        
     }
 }

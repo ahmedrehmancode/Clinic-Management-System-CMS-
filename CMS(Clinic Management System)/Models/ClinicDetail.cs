@@ -6,6 +6,8 @@ namespace CMS_Clinic_Management_System_.Models
 {
     public class ClinicDetail
     {
+        
+
         // ye data clinic table k le
         [Key]
         public int ClinicId { get; set; }

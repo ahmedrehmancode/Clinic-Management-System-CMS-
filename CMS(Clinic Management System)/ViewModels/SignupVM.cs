@@ -6,8 +6,9 @@
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        // Baki fields jo pehle se hain:
-        public string Email { get; set; }
-        public string Password { get; set; }
+        
+        public string UserEmail { get; set; }
+        public string UserPassword { get; set; }
+       
     }
 }

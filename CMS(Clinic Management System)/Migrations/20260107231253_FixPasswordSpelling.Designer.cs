@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMS_Clinic_Management_System_.Migrations
 {
     [DbContext(typeof(Mydbcontext))]
-    [Migration("20260104232614_User")]
-    partial class User
+    [Migration("20260107231253_FixPasswordSpelling")]
+    partial class FixPasswordSpelling
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,6 +68,10 @@ namespace CMS_Clinic_Management_System_.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("ClinicId");
 
                     b.ToTable("clinicDetails");
@@ -92,7 +96,7 @@ namespace CMS_Clinic_Management_System_.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserPassowrd")
+                    b.Property<string>("UserPassword")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -107,11 +111,11 @@ namespace CMS_Clinic_Management_System_.Migrations
 
             modelBuilder.Entity("CMS_Clinic_Management_System_.Models.User", b =>
                 {
-                    b.HasOne("CMS_Clinic_Management_System_.Models.ClinicDetail", "Clinic")
+                    b.HasOne("CMS_Clinic_Management_System_.Models.ClinicDetail", "ClinicDetail")
                         .WithOne("User")
                         .HasForeignKey("CMS_Clinic_Management_System_.Models.User", "ClinicId");
 
-                    b.Navigation("Clinic");
+                    b.Navigation("ClinicDetail");
                 });
 
             modelBuilder.Entity("CMS_Clinic_Management_System_.Models.ClinicDetail", b =>
