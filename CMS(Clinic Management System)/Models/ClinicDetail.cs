@@ -14,6 +14,7 @@ namespace CMS_Clinic_Management_System_.Models
 
         [Required(ErrorMessage = "Enter Clinic Name")]
         public string ClinicName { get; set;  }
+       
 
         [Required(ErrorMessage = "Enter Clinic Address")]
         public string Address { get; set; }
