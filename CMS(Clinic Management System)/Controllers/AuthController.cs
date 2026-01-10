@@ -64,6 +64,7 @@ namespace CMS_Clinic_Management_System_.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult UserSignUp(SignupVM model)
         {
@@ -102,18 +103,83 @@ namespace CMS_Clinic_Management_System_.Controllers
 
 
         }
-            
-            
-           
+       
+
+
+       
+        public IActionResult ForgotPassword()
+        {
+            return View();
+
+
+         }
+        [HttpPost]
+        public IActionResult ForgotPassword(string email)
+        {
+           var data = _context.UsersDetails.FirstOrDefault(e => e.UserEmail == email);
+            if (data != null)
+            {
+                return RedirectToAction("ChangePassword", new {id = data.UserId});
+
+            }
+            else
+            {
+                ViewBag.Messege = "Email Not Found";
+               
+                
+            }
+
+                return View();
+
+        }
+        public IActionResult ChangePassword(int id)
+        {
+            ViewBag.Id = id;
             
 
-        
+                    
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult ChangePassword(int id, string password, string conformpassword)
+        {
+            var data = _context.UsersDetails.FirstOrDefault(p => p.UserId == id);
+            if (data != null)
+            {
+
+                if (password == conformpassword)
+                {
+                    data.UserPassword = password;
+                    _context.SaveChanges();
+                    return RedirectToAction("UserLogin");
+
+                }
+                else
+                {
+                    ViewBag.cpass = "Passowrd Dosn't Match";
+                    return View();
+
+                }
+
+
+
+
+
+            }
+            
+           
+           
+            return View();
+        }
         public IActionResult UserLogin()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult UserLogin(string Email,string Password)
+        public IActionResult UserLogin(string Email, string Password)
         {
             var data = _context.UsersDetails.FirstOrDefault(e => e.UserEmail == Email);
             if (data != null && data.UserPassword == Password)
@@ -121,17 +187,14 @@ namespace CMS_Clinic_Management_System_.Controllers
                 HttpContext.Session.SetString("userid", data.UserId.ToString());
                 return RedirectToAction("dashboard", "user");
             }
-            else {
+            else
+            {
                 ViewBag.Message = "Invalid credentials";
             }
 
             return View();
         }
-        public IActionResult ForgotPassword()
-        {
-            return View();
 
-
-                }
     }
-}
+    }
+
