@@ -2,14 +2,11 @@
 
 namespace CMS_Clinic_Management_System_.Controllers
 {
-    public class ProductController : Controller
+    public class CategoryController : Controller
     {
-        public IActionResult Products()
+        public IActionResult Index()
         {
             return View();
         }
-
-
-      
     }
 }
