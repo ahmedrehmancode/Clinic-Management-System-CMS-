@@ -14,5 +14,7 @@ namespace CMS_Clinic_Management_System_.Models
         public DbSet<ClinicDetail> clinicDetails { get; set; }
         public DbSet<User> UsersDetails { get; set; }
 
+        public DbSet<Category> Categories { get; set; }    
+
     }
 }
