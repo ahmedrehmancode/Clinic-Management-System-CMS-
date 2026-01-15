@@ -33,7 +33,7 @@ namespace CMS_Clinic_Management_System_.Controllers
             var data = _context.Admins.FirstOrDefault(a => a.Email == Email);
             if (data != null && data.Password == Password)
             {
-                HttpContext.Session.SetString("adminid", data.Id.ToString());
+                HttpContext.Session.SetInt32("adminid", data.Id);
                 return RedirectToAction("index","admin");
             }
             else
@@ -43,16 +43,13 @@ namespace CMS_Clinic_Management_System_.Controllers
             }
             return View();
         }
-        public IActionResult adminlogout()
+        public IActionResult logout()
         {
-            if (HttpContext.Session.GetString("adminid") == null)
+            if (HttpContext.Session.GetInt32("adminid") != null)
             {
 
                 HttpContext.Session.Remove("adminid");
-            }
-            else
-            {
-                return RedirectToAction("adminlogin","auth");
+                return RedirectToAction( "adminlogin");
             }
             return View();
         }

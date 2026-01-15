@@ -1,4 +1,5 @@
 ﻿using CMS_Clinic_Management_System_.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -13,17 +14,20 @@ namespace e_project.Controllers
         {
             _db = context;
         }
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetString("adminid") == null)
+            if (HttpContext.Session.GetInt32("adminid") != null)
             {
-                
+                return View();
+               
 
-                return RedirectToAction("login");
             }
             else
             {
-                return View();
+                return RedirectToAction("adminlogin", "auth");
+
             }
 
             //return View();
