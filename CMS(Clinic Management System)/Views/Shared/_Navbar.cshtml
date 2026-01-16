@@ -9,11 +9,11 @@
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 
     <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="~/css/home.css" />
     <link rel="stylesheet" href="assets/css/styles.css">
 
     @* <title>Home Page</title> *@
@@ -37,11 +37,11 @@
                     <div class="nav__menu" id="nav-menu">
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Home</a>
+                                <a href="@Url.Action("index","home")" class="nav__link">Home</a>
                             </li>
 
                             <li class="nav__item">
-                                <a href="#" class="nav__link">About Us</a>
+                                <a href="@Url.Action("index","about")" class="nav__link">About Us</a>
                             </li>
 
                             <li class="nav__item">
@@ -88,22 +88,47 @@
                 </nav>
             </header>
 
-
-
-            <!--=============== MAIN JS ===============-->
-            <script src="assets/js/main.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-       
-
-
-
-
-
-
-
-        @RenderBody()
     </div>
+        @RenderBody()
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <img src="~/images/logo.png" alt="Alternate Text" />
+                    <p class="text-muted">Your trusted partner in medical equipment and education.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Products</h5>
+                    <a href="#" class="footer-link">Diagnostic Tools</a>
+                    <a href="#" class="footer-link">Monitoring Devices</a>
+                    <a href="#" class="footer-link">Surgical Equipment</a>
+                    <a href="#" class="footer-link">Imaging Systems</a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Education</h5>
+                    <a href="#" class="footer-link">Webinars</a>
+                    <a href="#" class="footer-link">Workshops</a>
+                    <a href="#" class="footer-link">Lectures</a>
+                    <a href="#" class="footer-link">Certifications</a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact</h5>
+                    <p class="text-muted mb-1">support@meditech.com</p>
+                    <p class="text-muted mb-1">1-800-MEDITECH</p>
+                    <p class="text-muted">Mon-Fri: 9AM-6PM EST</p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center text-muted py-3">
+                © 2026 MediTech Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

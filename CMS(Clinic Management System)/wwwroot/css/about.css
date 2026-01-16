@@ -1,0 +1,63 @@
+﻿:root {
+    --theme-color: #0896B7;
+    --body-padding-bottom: 5.5rem;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f9fb;
+    margin-top: 100px;
+}
+
+.hero {
+    background: linear-gradient(rgba(8,150,183,0.95), rgba(8,150,183,0.95)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3') center/cover;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+/*    margin-top: 100px;*/
+}
+
+    .hero h1 {
+        font-weight: 700;
+    }
+
+.section-title {
+    color: var(--theme-color);
+    font-weight: 700;
+}
+
+.divider {
+    width: 80px;
+    height: 4px;
+    background-color: var(--theme-color);
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.card-custom {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+    .card-custom:hover {
+        transform: translateY(-10px);
+    }
+
+.icon {
+    font-size: 42px;
+    color: var(--theme-color);
+}
+
+.bg-theme-light {
+    background-color: #e9f7fb;
+}
+
+.highlight-box {
+    background-color: white;
+    border-left: 6px solid var(--theme-color);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}

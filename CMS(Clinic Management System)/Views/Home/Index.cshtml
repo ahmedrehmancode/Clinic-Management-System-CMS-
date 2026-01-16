@@ -1,3 +1,267 @@
 ﻿@{
     Layout = "_Navbar";
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="~/assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/home.css">
+    <title>Home page</title>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Premium Medical Equipment for Healthcare Professionals</h1>
+                    <p>Discover cutting-edge medical devices and join expert-led seminars to advance your practice.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-white">Shop Equipment</button>
+                        <button class="btn btn-outline-white">View Seminars</button>
+                    </div>
+                    <div class="stat-box">
+                        <div class="row">
+                            <div class="col-4 stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Products</div>
+                            </div>
+                            <div class="col-4 stat-item">
+                                <div class="stat-number">50K+</div>
+                                <div class="stat-label">Customers</div>
+                            </div>
+                            <div class="col-4 stat-item">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Seminars</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="feature-card">
+                        <div class="text-center icon">🏥</div>
+                        <h3 class="text-center">Industry Leading</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-award"></i> FDA Approved Equipment</li>
+                            <li><i class="fas fa-users"></i> Expert-Led Training</li>
+                            <li><i class="fas fa-calendar"></i> 24/7 Support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section id="equipment" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Medical Equipment</h2>
+                <p>Professional-grade equipment trusted by healthcare providers worldwide</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card equipment-card">
+                        <div class="card-header">
+                            <div class="equipment-icon">🩺</div>
+                            <span class="badge">Diagnostic</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Stethoscope</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="price">$299</div>
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card equipment-card">
+                        <div class="card-header">
+                            <div class="equipment-icon">💉</div>
+                            <span class="badge">Monitoring</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Blood Pressure Monitor</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="price">$149</div>
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card equipment-card">
+                        <div class="card-header">
+                            <div class="equipment-icon">📊</div>
+                            <span class="badge">Monitoring</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pulse Oximeter</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="price">$89</div>
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card equipment-card">
+                        <div class="card-header">
+                            <div class="equipment-icon">💓</div>
+                            <span class="badge">Diagnostic</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">ECG Machine</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="price">$2,499</div>
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card equipment-card">
+                        <div class="card-header">
+                            <div class="equipment-icon">🔬</div>
+                            <span class="badge">Surgical</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Surgical Kit</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="price">$599</div>
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card equipment-card">
+                        <div class="card-header">
+                            <div class="equipment-icon">📡</div>
+                            <span class="badge">Imaging</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Ultrasound Scanner</h5>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="price">$4,999</div>
+                                <button class="btn btn-primary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-primary">View All Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seminars Section -->
+    <section id="seminars" class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Seminars & Lectures</h2>
+                <p>Learn from industry experts and stay ahead in medical technology</p>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="seminar-card">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="mb-2">
+                                    <span class="seminar-type">Webinar</span>
+                                    <span class="ms-3 text-muted">🗓️ Jan 25, 2026 • 2:00 PM EST</span>
+                                </div>
+                                <h3>Advanced Diagnostic Techniques</h3>
+                                <div class="text-muted">
+                                    <i class="fas fa-users me-2"></i>450 registered
+                                    <span class="ms-3">👨‍⚕️ Dr. Sarah Johnson</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 mt-md-0">
+                                <button class="btn btn-outline-primary btn-sm me-2">
+                                    <i class="fas fa-play"></i> Preview
+                                </button>
+                                <button class="btn btn-primary btn-sm">Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seminar-card">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="mb-2">
+                                    <span class="seminar-type">Workshop</span>
+                                    <span class="ms-3 text-muted">🗓️ Feb 2, 2026 • 10:00 AM EST</span>
+                                </div>
+                                <h3>Modern Surgical Equipment Usage</h3>
+                                <div class="text-muted">
+                                    <i class="fas fa-users me-2"></i>320 registered
+                                    <span class="ms-3">👨‍⚕️ Dr. Michael Chen</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 mt-md-0">
+                                <button class="btn btn-outline-primary btn-sm me-2">
+                                    <i class="fas fa-play"></i> Preview
+                                </button>
+                                <button class="btn btn-primary btn-sm">Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seminar-card">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="mb-2">
+                                    <span class="seminar-type">Lecture</span>
+                                    <span class="ms-3 text-muted">🗓️ Feb 10, 2026 • 3:00 PM EST</span>
+                                </div>
+                                <h3>Medical Equipment Maintenance</h3>
+                                <div class="text-muted">
+                                    <i class="fas fa-users me-2"></i>280 registered
+                                    <span class="ms-3">👨‍⚕️ Prof. Emily Roberts</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 mt-md-0">
+                                <button class="btn btn-outline-primary btn-sm me-2">
+                                    <i class="fas fa-play"></i> Preview
+                                </button>
+                                <button class="btn btn-primary btn-sm">Register Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2>Ready to Elevate Your Medical Practice?</h2>
+                    <p class="lead mb-4">Join thousands of healthcare professionals who trust MediTech Pro</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <button class="btn btn-white" type="button">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
