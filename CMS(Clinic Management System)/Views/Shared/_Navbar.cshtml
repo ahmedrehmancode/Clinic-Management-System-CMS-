@@ -7,8 +7,15 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="~/assets/css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="~/css/about.css" />
     <link rel="stylesheet" href="~/css/home.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css" />
+
+
+    
+   
     @* <title>Clinic Management System</title> *@
 </head>
 <body>
@@ -44,17 +51,17 @@
                             </li>
 
                             <li class="nav__item">
-                                <a href="#" class="nav__link">Contact Us</a>
+                                <a href="@Url.Action("index","contact")" class="nav__link">Contact Us</a>
                             </li>
-                            <li><div class="dropdown">
+                    <li><div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" style="background-color: #0896B7;" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                         Sign In
                     </button>
                     <ul class="dropdown-menu">
                         <!-- <li><a class="dropdown-item" href="#">Action</a></li> -->
-                        <li><a class="dropdown-item" href="@Url.Action("userlogin", "auth")">User Login</a></li>
-                        <li><a class="dropdown-item" href="@Url.Action("adminlogin","auth")">Login admin</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("userlogin", "Auth")">User Login</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("adminlogin","Auth")">Login admin</a></li>
                     </ul>
                 </div></li>
                         </ul>
@@ -118,8 +125,9 @@
     </footer>
 
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
-
+    @* <script src="assets/js/main.js"></script> *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script> *@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
