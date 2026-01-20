@@ -3,131 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    @* Title  *@
+    <title>@ViewData["Title"] | Clinic Management System</title>
+   @* favicon *@
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.svg" />
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
 
-    <link rel="stylesheet" href="~/css/about.css" />
-    <link rel="stylesheet" href="~/css/home.css">
-    <link rel="stylesheet" href="~/assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custome Css Links -->
+    <link rel="stylesheet" href="~/css/navbar.css">
+    @* <link href="~/css/home.css" rel="stylesheet" /> *@
 
-
-    
-   
-    @* <title>Clinic Management System</title> *@
+    @RenderSection("Styles", required: false)
 </head>
 <body>
-    <div>
-       
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar_Layout">
+        <div class="container-fluid d-flex justify-content-between  ">
+            <a class="navbar-brand d-flex  align-items-center" href="#">
+                <!-- <i class="fas fa-clinic-medical me-2"></i> -->
+                <img src="~/images/CMS.webp" alt="" width="150px" height="80px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("index","home")"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="navbar.html"><i class="fas fa-pills me-1"></i> Medicines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-tools me-1"></i> Equipment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("index","about")"><i class="fas fa-shield-alt me-1"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shield-alt me-1"></i> Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("index","contact")"><i class="fas fa-phone me-1"></i> Contact</a>
+                    </li>
+                </ul>
 
-        @* <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div> *@
-       
-            <!--==================== HEADER ====================-->
-            <header class="header" id="header">
-                <nav class="nav container">
-                    <a href="#" class="nav__logo"><img src="~/images/logo.png" alt="Alternate Text" /></a>
-
-                    <div class="nav__menu" id="nav-menu">
-                        <ul class="nav__list">
-                            <li class="nav__item">
-                                <a href="@Url.Action("index","home")" class="nav__link">Home</a>
+                <!-- Authentication Dropdown -->
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="btn btn-auth dropdown-toggle d-flex align-items-center" type="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-2"></i> Authentication
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-start" aria-labelledby="authDropdown">
+                            <li><h6 class="dropdown-header">Login to Your Account</h6></li>
+                            <li>
+                                <a class="dropdown-item" href="@Url.Action("UserLogin", "auth")" >
+                                    <i class="fas fa-user-md"></i> User Login
+                                    <small class="d-block text-muted mt-1">For medical professionals & customers</small>
+                                </a>
                             </li>
-
-                            <li class="nav__item">
-                                <a href="@Url.Action("index","about")" class="nav__link">About Us</a>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user-shield"></i> Admin Login
+                                    <small class="d-block text-muted mt-1">For system administrators</small>
+                                </a>
                             </li>
-
-                            <li class="nav__item">
-                                <a href="#" class="nav__link">Services</a>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user-plus"></i> Create Account
+                                </a>
                             </li>
-
-                            <li class="nav__item">
-                                <a href="#" class="nav__link">Product</a>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-key"></i> Forgot Password?
+                                </a>
                             </li>
-
-                            <li class="nav__item">
-                                <a href="@Url.Action("index","contact")" class="nav__link">Contact Us</a>
-                            </li>
-                    <li><div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" style="background-color: #0896B7;" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                        Sign In
-                    </button>
-                    <ul class="dropdown-menu">
-                        <!-- <li><a class="dropdown-item" href="#">Action</a></li> -->
-                        <li><a class="dropdown-item" href="@Url.Action("userlogin", "Auth")">User Login</a></li>
-                        <li><a class="dropdown-item" href="@Url.Action("adminlogin","Auth")">Login admin</a></li>
-                    </ul>
-                </div></li>
                         </ul>
-
-
-
-                        <!-- Close button -->
-                        <div class="nav__close" id="nav-close">
-                            <i class="ri-close-line"></i>
-                        </div>
                     </div>
-                
-
-                    <div class="nav__actions">
-
-
-                        <!-- Toggle button -->
-                        <div class="nav__toggle" id="nav-toggle">
-                            <i class="ri-menu-line"></i>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-
-    </div>
-        @RenderBody()
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <img src="~/images/logo.png" alt="Alternate Text" />
-                    <p class="text-muted">Your trusted partner in medical equipment and education.</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Products</h5>
-                    <a href="#" class="footer-link">Diagnostic Tools</a>
-                    <a href="#" class="footer-link">Monitoring Devices</a>
-                    <a href="#" class="footer-link">Surgical Equipment</a>
-                    <a href="#" class="footer-link">Imaging Systems</a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Education</h5>
-                    <a href="#" class="footer-link">Webinars</a>
-                    <a href="#" class="footer-link">Workshops</a>
-                    <a href="#" class="footer-link">Lectures</a>
-                    <a href="#" class="footer-link">Certifications</a>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>Contact</h5>
-                    <p class="text-muted mb-1">support@meditech.com</p>
-                    <p class="text-muted mb-1">1-800-MEDITECH</p>
-                    <p class="text-muted">Mon-Fri: 9AM-6PM EST</p>
                 </div>
             </div>
-            <hr class="bg-secondary">
-            <div class="text-center text-muted py-3">
-                © 2026 MediTech Pro. All rights reserved.
+        </div>
+    </nav>
+
+        @RenderBody()
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-white mb-3">
+                        <i class="fas fa-clinic-medical me-2"></i>Clinic Management System
+                    </h5>
+                    <p>
+                        Your trusted partner for medical supplies and clinic management solutions. We provide quality
+                        medicines and equipment to healthcare providers nationwide.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Medicines Catalog</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Medical Equipment</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Clinic Software</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-white mb-3">Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Medical Center Drive, Cityville 12345</p>
+                    <p><i class="fas fa-phone me-2"></i>(123) 456-7890</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@clinicmanagement.com</p>
+                    <p class="mt-4"><i class="fas fa-truck me-2"></i>Nationwide Delivery Available</p>
+                </div>
+            </div>
+
+            <hr class="mt-0 mb-4" style="border-color: #555;">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Clinic Management System. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Designed for healthcare professionals</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!--=============== MAIN JS ===============-->
-    @* <script src="assets/js/main.js"></script> *@
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script> *@
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
 </body>
 </html>

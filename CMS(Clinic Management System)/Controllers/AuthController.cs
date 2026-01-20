@@ -186,7 +186,7 @@ namespace CMS_Clinic_Management_System_.Controllers
             }
             else
             {
-                ViewBag.Message = "Invalid credentials";
+                ViewBag.erroMessage = "Invalid credentials";
             }
 
             return View();

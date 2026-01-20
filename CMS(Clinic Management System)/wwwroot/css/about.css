@@ -1,12 +1,8 @@
-﻿:root {
-    --theme-color: #0896B7;
-    --body-padding-bottom: 5.5rem;
-}
+﻿
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     background-color: #f4f9fb;
-    margin-top: 100px;
 }
 
 .hero {
@@ -14,7 +10,7 @@ body {
     color: white;
     padding: 90px 20px;
     text-align: center;
-/*    margin-top: 100px;*/
+
 }
 
     .hero h1 {
