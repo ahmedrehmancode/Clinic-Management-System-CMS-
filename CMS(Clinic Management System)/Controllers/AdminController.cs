@@ -18,16 +18,16 @@ namespace e_project.Controllers
         
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetInt32("adminid") != null)
+            if (HttpContext.Session.GetInt32("adminid") == null)
             {
-                return View();
-               
+              
+                return RedirectToAction("adminlogin", "auth");
+
 
             }
             else
             {
-                return RedirectToAction("adminlogin", "auth");
-
+                return View();
             }
 
             //return View();

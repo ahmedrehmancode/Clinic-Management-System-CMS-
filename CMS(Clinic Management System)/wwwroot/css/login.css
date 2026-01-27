@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 700px;
 }
 
 .login-container {
@@ -108,6 +109,7 @@
         border-color: #86b7fe;
     }
 
+
 .form-check-input:checked {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -182,6 +184,12 @@
     background-color: #067295;
     opacity: 40%;
 }
+.error_main {
+
+    height: 55px;
+/*    border: solid;*/
+    
+}
 .error {
     width: 100%;
     color: rgb(250, 1, 1);
@@ -195,6 +203,8 @@
     font-size: 19px;
     margin-bottom:10px;
 }
+
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
     .login-left {

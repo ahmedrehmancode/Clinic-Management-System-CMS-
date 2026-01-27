@@ -2,6 +2,7 @@
 using CMS_Clinic_Management_System_.Migrations;
 using CMS_Clinic_Management_System_.Models;
 using CMS_Clinic_Management_System_.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using User = CMS_Clinic_Management_System_.Models.User;
 
@@ -12,6 +13,7 @@ namespace CMS_Clinic_Management_System_.Controllers
     
     public class AuthController : Controller
     {
+        
         private Mydbcontext _context;
         private object clinic;
 
@@ -20,7 +22,7 @@ namespace CMS_Clinic_Management_System_.Controllers
             _context = context;
             
         }
-        
+         //Admin login View
 
         public IActionResult AdminLogin()
         {
@@ -34,29 +36,42 @@ namespace CMS_Clinic_Management_System_.Controllers
             if (data != null && data.Password == Password)
             {
                 HttpContext.Session.SetInt32("adminid", data.Id);
+                HttpContext.Session.SetString("Role", data.Role);
                 return RedirectToAction("index","admin");
             }
             else
             {
-                ViewBag.Message = "Invalid credentials";
+                ViewBag.errorMessage = "Invalid credentials";
 
             }
             return View();
         }
+        //logout ACtion
         public IActionResult logout()
         {
+
+            
             if (HttpContext.Session.GetInt32("adminid") != null)
             {
+                    
+                        HttpContext.Session.Clear();
+                        return RedirectToAction("adminlogin");
+                  
 
-                HttpContext.Session.Remove("adminid");
-                return RedirectToAction( "adminlogin");
+                
+            }
+            else if (HttpContext.Session.GetString("userid") != null)
+            {
+                HttpContext.Session.Clear();
+                return RedirectToAction("userlogin");
+
             }
             return View();
         }
 
 
-       
 
+        //user sign up View
         public IActionResult UserSignUp()
         {
             return View();
@@ -100,10 +115,10 @@ namespace CMS_Clinic_Management_System_.Controllers
 
 
         }
-       
 
 
-       
+
+        //Forgotpassowrd View
         public IActionResult ForgotPassword()
         {
             return View();
@@ -129,6 +144,7 @@ namespace CMS_Clinic_Management_System_.Controllers
                 return View();
 
         }
+        //conform password action
         public IActionResult ChangePassword(int id)
         {
             ViewBag.Id = id;
@@ -170,6 +186,7 @@ namespace CMS_Clinic_Management_System_.Controllers
            
             return View();
         }
+        //userlogin view
         public IActionResult UserLogin()
         {
             return View();

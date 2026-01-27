@@ -1,6 +1,4 @@
-﻿
-
-@{
+﻿@{
     Layout = null;
 
 }
@@ -18,14 +16,14 @@
 </head>
 <body>
 
-    
+
 
     <div class="main">
         <div class="container login-container">
             <div class="row g-0 login-card">
                 <!-- Left side with benefits/info -->
                 <div class="col-lg-6 login-left" id="img_login">
-                    
+
                     <div id="imgchild">
                     </div>
                 </div>
@@ -33,20 +31,24 @@
                 <!-- Right side with login form -->
 
                 <div class="col-lg-6 login-right">
-                    @if (ViewBag.erroMessege != null)
-                    {
-                        <div class="error">
-                            Invalid credentials
+                    <div class="error_main"">
+                        @if (ViewBag.erroMessage != null)
+                        {
+                            <div class="form-check error">
+                                Invalid credentials 
+                            </div>
+                        }
 
-                        </div>
-                        
-                    }   
+
+                    </div>
+                   
+                   
                     <div class="login-header">
                         <h2>User Login</h2>
                         <p>Login to access medicines, equipment, and manage your orders.</p>
                     </div>
 
-                    <form id="loginForm" method="post">
+                    <form method="post">
                         <!-- Email field -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
@@ -72,17 +74,21 @@
                             </div>
                         </div>
 
-                        <!-- Remember me & Forgot password -->
+                        <!-- Forgot password -->
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <div class="form-check">
-                                @* <input class="form-check-input" type="checkbox" id="rememberMe">
-                                <label class="form-check-label" for="rememberMe">
-                                    Remember me
-                                </label> *@
-                            </div>
-                            <a href="@Url.Action("ForgotPassword", "auth")" class="forgot-password">Forgot password?</a>
+                     
+                                <a href="@Url.Action("ForgotPassword", "auth")" class="forgot-password">Forgot password?</a>
                         </div>
 
+
+                        @* @if (ViewBag.erroMessage != null)
+                        {
+                            <div class="error">
+                                Invalid credentials
+
+                            </div> *@
+
+                        
                         <!-- Login button -->
                         <button type="submit" class="btn btn-login">
                             <i class="fas fa-sign-in-alt me-2"></i> Login as User
