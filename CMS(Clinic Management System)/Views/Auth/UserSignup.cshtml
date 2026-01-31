@@ -1,11 +1,10 @@
-﻿@{
-    Layout = null;
-    ViewData["Title"] = "Register";
-}
+﻿
+@model ClinicDetail;
+
 
 @{
     Layout = null;
-
+    ViewData["Title"] = "Register";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +52,9 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-envelope"></i>
                                 </span>
-                                <input type="text" class="form-control" id="name" name="ClinicName" placeholder="Enter Clinic Name" required>
+
+                                <input type="text" class="form-control" asp-for="ClinicName" name="ClinicName" placeholder="Enter Clinic Name" required>
+                                <span asp-validation-for="ClinicName"  class="text-danger"></span>
                             </div>
                         </div>
 

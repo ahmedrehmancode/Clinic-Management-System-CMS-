@@ -16,10 +16,10 @@ namespace CMS_Clinic_Management_System_.Models
         public string ClinicName { get; set;  }
        
 
-        [Required(ErrorMessage = "Enter Clinic Address")]
+        [Required(ErrorMessage = "Enter Clinic Location")]
         public string Address { get; set; }
 
-        [Required(ErrorMessage = "Enter Clinic Phone")]
+        [Required(ErrorMessage = "Enter Contact Phone")]
         public string Phone { get; set; }
 
         // virtual k clinic details ko user tk le jainge

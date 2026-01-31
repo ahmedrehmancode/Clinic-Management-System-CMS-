@@ -32,19 +32,15 @@ namespace CMS_Clinic_Management_System_.Controllers
         public IActionResult AdminLogin(string Email, string Password)
         {
 
-            var data = _context.Admins.FirstOrDefault(a => a.Email == Email);
-            if (data != null && data.Password == Password)
-            {
-                HttpContext.Session.SetInt32("adminid", data.Id);
-                HttpContext.Session.SetString("Role", data.Role);
-                return RedirectToAction("index","admin");
+            var data = _context.Admins.FirstOrDefault(a => a.Email == Email &&  a.Password == Password);
+            if (data == null)
+                {ViewBag.errorMessage = "Invalid credentials";
+                return RedirectToAction("adminlogin");
             }
-            else
-            {
-                ViewBag.errorMessage = "Invalid credentials";
 
-            }
-            return View();
+            HttpContext.Session.SetInt32("adminid", data.Id);
+            HttpContext.Session.SetString("Role", data.Role);
+            return RedirectToAction("index", "admin");
         }
         //logout ACtion
         public IActionResult logout()
@@ -60,13 +56,13 @@ namespace CMS_Clinic_Management_System_.Controllers
 
                 
             }
-            else if (HttpContext.Session.GetString("userid") != null)
+            else
             {
                 HttpContext.Session.Clear();
                 return RedirectToAction("userlogin");
 
             }
-            return View();
+            //return View();
         }
 
 

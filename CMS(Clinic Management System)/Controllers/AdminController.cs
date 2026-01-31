@@ -33,6 +33,11 @@ namespace e_project.Controllers
             //return View();
 
         }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
         
        
         
