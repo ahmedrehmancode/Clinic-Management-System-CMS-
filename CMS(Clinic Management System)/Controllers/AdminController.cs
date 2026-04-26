@@ -8,27 +8,12 @@ namespace e_project.Controllers
 {
     public class AdminController : Controller
     {
-        private Mydbcontext _db;
-
-        public AdminController(Mydbcontext context)
-        {
-            _db = context;
-        }
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+       
         
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetInt32("adminid") == null)
-            {
-              
-                return RedirectToAction("adminlogin", "auth");
-
-
-            }
-            else
-            {
-                return View();
-            }
+           
+           return View();
 
             //return View();
 

@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
-namespace CMS_Clinic_Management_System_.Models
+using CMS.Domain.Models;
+namespace CMS.Infrastructre.Models
 {
     public class Mydbcontext : DbContext
 
