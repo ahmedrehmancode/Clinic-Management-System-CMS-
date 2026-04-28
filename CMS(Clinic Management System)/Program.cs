@@ -10,6 +10,9 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        // ✅ ADD THIS
+        //builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession();
         // Add DBcontext Services 
         object value = builder.Services.AddInfrastructure(builder.Configuration);
 

@@ -45,9 +45,11 @@ namespace CMS_Clinic_Management_System_.Controllers
         }
 
         [HttpPost]
-        public IActionResult UserSignUp(SignupVM model)
+        public IActionResult UserSignUp(SignupViewModle model)
         {
            
+
+
                 return RedirectToAction("UserLogin");
 
 
