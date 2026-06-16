@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection.Emit;
 using System.Transactions;
 
 namespace CMS.Domain.Models
@@ -20,7 +21,8 @@ namespace CMS.Domain.Models
 
         public string Phone { get; set; }
 
-        // virtual k clinic details ko user tk le jainge
-        public virtual User User { get; set; }
+        
+       public string UserId { get; set; }
+        
     }
 }

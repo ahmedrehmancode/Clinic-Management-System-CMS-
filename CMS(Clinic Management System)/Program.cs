@@ -1,20 +1,21 @@
-using CMS.Infrastructre.Models;
-using Microsoft.EntityFrameworkCore;
 using CMS.Infrastructure;
 
-internal class Program
-{
-    private static void Main(string[] args)
-    {
+
+  
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-        // ✅ ADD THIS
+        
         //builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession();
         // Add DBcontext Services 
-        object value = builder.Services.AddInfrastructure(builder.Configuration);
+        builder.Services.AddInfrastructure(builder.Configuration);
+       
+       
+
+
+
 
         var app = builder.Build();
 
@@ -39,5 +40,4 @@ internal class Program
             pattern: "{controller=Home}/{action=index}/{id?}");
 
         app.Run();
-    }
-}
+    

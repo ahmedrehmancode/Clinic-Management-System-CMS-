@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMS.Application.Servicies
+namespace CMS.Domain.Enums
 {
-    public static class UserRegisterService
+    public enum UserStatus
     {
-        public void  
+        Active = 1,
+        Block = 2,
     }
 }

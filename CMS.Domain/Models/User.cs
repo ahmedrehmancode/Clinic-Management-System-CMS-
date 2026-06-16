@@ -1,6 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Diagnostics.Contracts;
 
 namespace CMS.Domain.Models
@@ -16,9 +17,16 @@ namespace CMS.Domain.Models
       
         public string Role { get; set; }
 
+        public string ImageUrl { get; set; }
+
+
+        public bool IsActive { get; set; } = false;
+
         //   ForeignKey Clinc ko user se connect kr ne k le
 
         public int? ClinicId { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
        
         public virtual ClinicDetail ClinicDetail { get; set; }
 
