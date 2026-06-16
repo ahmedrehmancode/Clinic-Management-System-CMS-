@@ -1,3 +1,4 @@
 .vs/
 bin/
 obj/
+CMS(Clinic Management System)/appsettings.Development.json
