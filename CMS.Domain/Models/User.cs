@@ -1,25 +1,33 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Diagnostics.Contracts;
 
-namespace CMS_Clinic_Management_System_.Models
+namespace CMS.Domain.Models
 {
     public class User
     {
-        [Key]
+       
         public int UserId { get; set; }
-        [Required]
+      
         public string UserEmail { get; set; }
-        [Required]
+       
         public string UserPassword { get; set; }
-        [Required]
+      
         public string Role { get; set; }
+
+        public string ImageUrl { get; set; }
+
+
+        public bool IsActive { get; set; } = false;
 
         //   ForeignKey Clinc ko user se connect kr ne k le
 
         public int? ClinicId { get; set; }
-        [ForeignKey("ClinicId")]
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+       
         public virtual ClinicDetail ClinicDetail { get; set; }
 
         

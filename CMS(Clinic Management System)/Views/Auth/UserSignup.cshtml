@@ -1,5 +1,4 @@
-﻿
-@model ClinicDetail;
+﻿@model CMS.Domain.Models.ClinicDetail;
 
 
 @{
@@ -16,7 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="~/css/login.css">
+    @* <link rel="stylesheet" href="~/css/login.css"> *@
+    <link rel="stylesheet" href="~/css/Signup.css" />
 </head>
 <body>
 
@@ -44,13 +44,13 @@
 
                     </div>
 
-                    <form method="post">
+                    <form method="post" asp-action="UserSignUp" asp-controller="AuthController">
                         <!-- Clinic name field -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Clinic Name</label>
                             <div class="input-group">
                                 <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
                                 </span>
 
                                 <input type="text" class="form-control" asp-for="ClinicName" name="ClinicName" placeholder="Enter Clinic Name" required>
@@ -58,19 +58,7 @@
                             </div>
                         </div>
 
-                        @* <!-- Password field -->
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                                <input type="password" class="form-control" id="password" name="Password" placeholder="Enter your password" required>
-                                <span class="input-group-text" id="togglePassword" style="cursor: pointer;">
-                                    <i class="fas fa-eye"></i>
-                                </span>
-                            </div>
-                        </div> *@
+              
                         <!-- Email field -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
@@ -81,36 +69,54 @@
                                 <input type="email" class="form-control" id="email" name="UserEmail" placeholder="Enter Your email" required>
                             </div>
                         </div>
-                        <!-- Email field -->
+                        <!-- Location field -->
                         <div class="mb-3">
                             <label for="location" class="form-label">Location</label>
                             <div class="input-group">
                                 <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control" id="location" name="Address" placeholder="Location" required>
                             </div>
                         </div>
-                        <!-- Email field -->
+                        <!-- Contact Number field -->
                         <div class="mb-3">
                             <label for="phone" class="form-label">Contact Number</label>
                             <div class="input-group">
                                 <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control" id="phone" name="Email" placeholder="Phone Number" required>
                             </div>
                         </div>
                         <!-- Email field -->
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label" this>Password</label>
                             <div class="input-group">
                                 <span class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-lock"></i>
                                 </span>
-                                <input type="email" class="form-control" id="passowrd" name="UserPassowrd" placeholder="Create a Passowrd" required>
+                                <input type="password" class="form-control" id="password" name="Password" placeholder="Enter your password" required>
+                                <span class="input-group-text" id="togglePassword" style="cursor: pointer;" onclick="togglePassword(this)">
+                                    <i class="fas fa-eye"></i>
+                                </span>
                             </div>
                         </div>
+                        <!-- Email field -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label" this>Password</label>
+                            <div class="input-group" ">
+                                <span class="input-group-text">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" id="password" name="Password" placeholder="Enter your password" required>
+                                <span class="input-group-text" id="togglePassword" style="cursor: pointer;" onclick="togglePassword(this)">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    
                        
 
                         <!-- Forgot password -->
