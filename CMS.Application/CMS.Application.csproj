@@ -15,10 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
     <Folder Include="Common\" />
-    <Folder Include="Features\" />
-    <Folder Include="Interfaces\Service\" />
+    <Folder Include="Features\User\Query\" />
     <Folder Include="Servicies\" />
   </ItemGroup>
 
