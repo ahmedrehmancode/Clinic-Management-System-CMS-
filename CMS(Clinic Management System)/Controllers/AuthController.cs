@@ -1,6 +1,6 @@
 ﻿using AspNetCoreGeneratedDocument;
 //using User = CMS_Clinic_Management_System_.Models.User;
-using CMS.Domain.Models;
+//using CMS.Domain.Models;
 //using CMS_Clinic_Management_System_.Migrations;
 using CMS_Clinic_Management_System_.ViewModels;
 using Microsoft.AspNetCore.Http;

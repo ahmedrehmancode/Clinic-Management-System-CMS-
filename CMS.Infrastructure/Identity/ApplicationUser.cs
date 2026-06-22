@@ -12,5 +12,7 @@ namespace CMS.Infrastructure.Identity
         public string FullName { get; set; }
 
         public bool? IsClinicAccount { get; set; }
+
+        public bool Status { get; set; }
     }
 }

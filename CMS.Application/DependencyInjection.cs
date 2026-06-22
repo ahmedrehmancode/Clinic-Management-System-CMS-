@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CMS.Application.Features.Authentication.Register;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace CMS.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+
+            services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(RegisterCommand).Assembly); });
         
         
         return services.AddSingleton<IServiceCollection>();

@@ -8,7 +8,7 @@ namespace CMS.Application.DTOs
 {
     public class UserResponseDTO
     {
-        public string Id { get; set; } = string.Empty;
+        public string UserId { get; set; } 
         public string FullName { get; set; } = string.Empty;
         public bool IsClinicAccount { get; set; }
 

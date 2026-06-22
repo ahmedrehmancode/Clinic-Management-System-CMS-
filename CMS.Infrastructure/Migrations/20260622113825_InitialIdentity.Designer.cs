@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMS.Infrastructure.Migrations
 {
     [DbContext(typeof(Mydbcontext))]
-    [Migration("20260617103513_InitialIdentity")]
+    [Migration("20260622113825_InitialIdentity")]
     partial class InitialIdentity
     {
         /// <inheritdoc />
@@ -76,6 +76,9 @@ namespace CMS.Infrastructure.Migrations
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");

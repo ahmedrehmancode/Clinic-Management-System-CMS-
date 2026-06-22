@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\**" />
+    <Compile Remove="Servicies\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="Servicies\**" />
+    <None Remove="Common\**" />
+    <None Remove="Servicies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="MediatR" Version="12.5.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.7" />
   </ItemGroup>
 
@@ -15,9 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
     <Folder Include="Features\User\Query\" />
-    <Folder Include="Servicies\" />
   </ItemGroup>
 
 </Project>

@@ -1,25 +1,38 @@
-﻿using CMS.Infrastructure.Repositories;
+﻿using CMS.Application.Interfaces.Repository;
+using CMS.Infrastructre.Data;
+using CMS.Infrastructure.Data;
+using CMS.Infrastructure.Identity;
+using CMS.Infrastructure.Mapping;
+using CMS.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CMS.Infrastructre.Data;
-using CMS.Infrastructure.Identity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using CMS.Application.Interfaces.Repository;
 
 namespace CMS.Infrastructure
 {
     public static class DependencyInjection
     {
+        // Seeding ke liye alag method
+       public static async Task SeedDatabaseAsync(this IServiceProvider serviceProvider)
+        {
+            var Scoped = serviceProvider.CreateScope();
+            var roleManager = Scoped.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            await DataSeeder.SeedRolesAsync(roleManager);
+
+        }
+
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+          
+
             // Database Connection
             services.AddDbContext<Mydbcontext>(options =>
             {
@@ -52,7 +65,7 @@ namespace CMS.Infrastructure
                     };
                 }
                 );
-            services.AddScoped<IClinicRepository, ClinicRepository>();
+            services.AddAutoMapper(cfg => { }, typeof(IdentityProfile).Assembly);
             return services;
         }
     }
