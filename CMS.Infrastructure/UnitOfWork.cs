@@ -1,6 +1,6 @@
 ﻿using CMS.Application;
 using CMS.Application.Interfaces.Repository;
-using CMS.Domain.Models;
+using CMS.Domain.Entities;
 using CMS.Infrastructre.Data;
 using CMS.Infrastructure.Repositories;
 using System;
@@ -15,16 +15,19 @@ namespace CMS.Infrastructure
     {
         private readonly Mydbcontext _context;
 
-        public IClinicRepository ClinicDetail { get; }
-        public UnitOfWork(Mydbcontext context,IClinicRepository clinicRepository)
+        public IidentityRepository Identity { get; }
+
+        public IUserRepository User { get; }
+
+        public UnitOfWork(Mydbcontext context,IidentityRepository IdentityRepository,IUserRepository userRepository)
         {
-
+            User = userRepository;
+            Identity = IdentityRepository;
             _context = context;
-            ClinicDetail = clinicRepository;
-
-
 
         }
+
+        //public IidentityRepository identityRepository => throw new NotImplementedException();
 
         public async Task<int> SaveAsync()
         {

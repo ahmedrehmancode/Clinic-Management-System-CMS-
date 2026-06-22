@@ -9,7 +9,9 @@ namespace CMS.Application
 {
     public interface IUnitOfWork
     {
-      IClinicRepository ClinicDetail { get; }
+
+        IidentityRepository Identity { get; }
+        IUserRepository User { get; }
 
         Task<int> SaveAsync();
     }

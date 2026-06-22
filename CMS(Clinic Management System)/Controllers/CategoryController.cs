@@ -1,6 +1,6 @@
 ﻿using CMS_Clinic_Management_System_.Models;
 using Microsoft.AspNetCore.Mvc;
-using CMS.Domain.Models;
+//using CMS.Domain.Models;
 
 namespace CMS_Clinic_Management_System_.Controllers
 {
@@ -15,18 +15,7 @@ namespace CMS_Clinic_Management_System_.Controllers
             return View();
 
         }
-        [HttpPost]
-        public IActionResult Index(Category cate)
-        {
-          
-            return View();
-
-
-
-
-
-        }
-
+      
 
 
     }
