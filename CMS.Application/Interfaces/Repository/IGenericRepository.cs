@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CMS.Infrastructure.Repositories
+{
+    public interface IGenericRepository<T> where T : class
+    {
+        Task<T> GetAsync(int id);
+
+        Task<IEnumerable<T>> GetAllAyc();
+
+        Task<T> CreateAsync(T entity);
+
+        Task<bool> UpdateAsync(T entity);
+
+        Task<bool> DeleteAsync(int id);
+    }
+}
