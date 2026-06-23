@@ -19,10 +19,17 @@ namespace CMS.Infrastructure
 
         public IUserRepository User { get; }
 
-        public UnitOfWork(Mydbcontext context,IidentityRepository IdentityRepository,IUserRepository userRepository)
+        public IClinicRepository Clinic {  get; }
+
+        public UnitOfWork(
+            Mydbcontext context,
+            IidentityRepository IdentityRepository,
+            IUserRepository userRepository,
+            IClinicRepository clinicRepository)
         {
             User = userRepository;
             Identity = IdentityRepository;
+            Clinic = clinicRepository;
             _context = context;
 
         }

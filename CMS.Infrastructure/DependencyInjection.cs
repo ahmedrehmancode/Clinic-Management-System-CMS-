@@ -21,12 +21,23 @@ namespace CMS.Infrastructure
     public static class DependencyInjection
     {
         // Seeding ke liye alag method
-       public static async Task SeedDatabaseAsync(this IServiceProvider serviceProvider)
+       public static async Task SeedRoleDatabaseAsync(this IServiceProvider serviceProvider)
         {
             var Scoped = serviceProvider.CreateScope();
             var roleManager = Scoped.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             await DataSeeder.SeedRolesAsync(roleManager);
 
+        }
+
+        public static async Task SeedAdminAddAsync(this IServiceProvider serviceProvider)
+        {
+
+            var scoped = serviceProvider.CreateScope();
+            var roleManager = scoped.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+            await AdminAddSeeder.AdminRegister(userManager, roleManager);
+        
+        
         }
 
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
