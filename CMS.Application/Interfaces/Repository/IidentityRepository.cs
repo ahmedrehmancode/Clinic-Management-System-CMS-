@@ -11,7 +11,7 @@ namespace CMS.Application.Interfaces.Repository
 {
     public interface IidentityRepository
     {
-        Task<bool> Resgister(User user,string password);
+        Task<User> Resgister(User user,string password);
 
         
     }
