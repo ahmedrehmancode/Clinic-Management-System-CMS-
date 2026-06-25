@@ -1,4 +1,5 @@
 ﻿using AutoMapper.Configuration.Annotations;
+using CMS.Application.Common;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,13 +10,21 @@ using System.Threading.Tasks;
 
 namespace CMS.Application.Features.Authentication.Register
 {
-    public class RegisterCommand : IRequest
+    public class RegisterCommand : IRequest<Result>
     {
-        public string FullName { get; set; }
+        public string ClinicName { get; set; }
 
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public string Address { get; set; }
+        
+        public string ClinicRegistraionNumber { get; set; }
+
+
+
+
 
 
     }

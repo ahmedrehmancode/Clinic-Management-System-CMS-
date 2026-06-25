@@ -16,17 +16,24 @@ namespace CMS.Infrastructure.Repositories
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper _mapper;
-        public IdentityRepository(UserManager<ApplicationUser> userManager,IMapper mapper )
-        {   
+        public IdentityRepository(UserManager<ApplicationUser> userManager, IMapper mapper)
+        {
             _userManager = userManager;
             _mapper = mapper;
-        } 
-        public async Task<bool> Resgister(User user, string password)
+        }
+        public async Task<User> Resgister(User user, string password)
         {
-            ApplicationUser createRequest = _mapper.Map<ApplicationUser>(user );
+            ApplicationUser createRequest = _mapper.Map<ApplicationUser>(user);
             createRequest.UserName = user.Email;
-            var CreateUser = await _userManager.CreateAsync(createRequest,password);
-            return CreateUser.Succeeded;
+            IdentityResult CreateUser = await _userManager.CreateAsync(createRequest, password);
+            if (CreateUser.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(createRequest, "Clinic");
+                var newUser = _mapper.Map<User>(createRequest);
+                return newUser;
+            }
+            return null;
         }
     }
 }
+
