@@ -1,5 +1,4 @@
-﻿using CMS.Application.DTOs;
-using CMS.Application.Features.User.Command.EditUser;
+﻿using CMS.Application.Features.UserProfile.Command.EditUser;
 using CMS.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ namespace CMS.Application.Interfaces.Repository
 {
     public interface IidentityRepository
     {
-        Task<User> Resgister(User user,string password);
+        Task<User?> Resgister(User user,string password);
 
         
     }

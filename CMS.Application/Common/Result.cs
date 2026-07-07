@@ -12,11 +12,12 @@ namespace CMS.Application.Common
 
         public string? Message { get; set; }
 
-        public static Result Success()
+        public static Result Success(string? message = null)
         {
             return new Result()
             {
                 IsSuccess = true,
+                Message = message ?? "Operation completed successfully."
 
             };
 

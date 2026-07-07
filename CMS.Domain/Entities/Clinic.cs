@@ -9,13 +9,13 @@ namespace CMS.Domain.Entities
 {
     public class Clinic : BaseEntity
     {
-        public string ClinicName { get; set; }
+        public required string ClinicName { get; set; }
 
-        public string ClinicRegistraionNumber { get; set; }
+        public required string ClinicRegistraionNumber { get; set; }
 
-        public string Address { get; set; }
+        public required string Address { get; set; }
 
-        public string UserId {  get; set; }
+        public required string UserId {  get; set; }
 
 
     }

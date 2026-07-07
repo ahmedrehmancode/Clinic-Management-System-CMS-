@@ -1,4 +1,5 @@
-﻿using CMS.Infrastructre.Data;
+﻿using CMS.Application;
+using CMS.Infrastructre.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,13 @@ namespace CMS.Infrastructure.Repositories
     {
         protected readonly Mydbcontext _context;
         protected readonly DbSet<T> _dbSet;
-
-
         public GenericRepository(Mydbcontext context)
         {
             _context = context;
+            
             _dbSet = context.Set<T>();
-        
-        
         }
-        public async Task<T> CreateAsync(T entity)
+        public async Task<T?> CreateAsync(T entity)
         {
 
             await _dbSet.AddAsync(entity);
@@ -38,13 +36,13 @@ namespace CMS.Infrastructure.Repositories
             return true;
         }
 
-        public async Task<IEnumerable<T>> GetAllAyc()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
             var entities = await _dbSet.ToListAsync();
             return entities;
         }
 
-        public async Task<T> GetAsync(int id)
+        public async Task<T?> GetAsync(int id)
         {
             var entity = await _dbSet.FindAsync(id);
             if (entity == null) return null;

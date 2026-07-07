@@ -1,21 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-//using CMS.Domain.Models;
 
 namespace CMS_Clinic_Management_System_.Controllers
 {
-    public class CategoryController : Controller
+    public class ErrorController : Controller
     {
-       
-        public IActionResult Index()
+        public IActionResult Error()
         {
-
-
-
             return View();
-
         }
-      
-
-
     }
 }

@@ -13,7 +13,7 @@ namespace CMS.Application.Mapping
     {
         public UserProfile()
         {
-            CreateMap<User,RegisterCommand>(); ;
+            CreateMap<User,RegisterCommand>().ReverseMap(); ;
             
         }
 

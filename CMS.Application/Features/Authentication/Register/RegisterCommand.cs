@@ -12,15 +12,19 @@ namespace CMS.Application.Features.Authentication.Register
 {
     public class RegisterCommand : IRequest<Result>
     {
-        public string ClinicName { get; set; }
+        public required string ClinicName { get; set; }
 
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
-        public string Password { get; set; }
+        public required string Password { get; set; }
 
-        public string Address { get; set; }
+        public required string ConfirmPassword { get; set; }
+
+        public required string Phone { get; set; }
+
+        public required string Address { get; set; }
         
-        public string ClinicRegistraionNumber { get; set; }
+        public required string ClinicRegistraionNumber { get; set; }
 
 
 

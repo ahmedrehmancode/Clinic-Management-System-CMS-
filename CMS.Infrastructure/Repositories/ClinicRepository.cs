@@ -1,4 +1,5 @@
-﻿using CMS.Application.Interfaces.Repository;
+﻿using CMS.Application;
+using CMS.Application.Interfaces.Repository;
 using CMS.Domain.Entities;
 using CMS.Infrastructre.Data;
 using System;

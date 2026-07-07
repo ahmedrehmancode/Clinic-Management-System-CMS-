@@ -1,5 +1,4 @@
-﻿using CMS.Application.DTOs;
-using CMS.Application.Features.User.Command.EditUser;
+﻿using CMS.Application.Features.UserProfile.Command.EditUser;
 using CMS.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,8 +10,8 @@ namespace CMS.Application.Interfaces.Repository
 {
     public interface IUserRepository
     {
-        Task<User> GetById(string Id);
-        Task<User> GetByEmail(string Email);
+        Task<User?> GetById(string Id);
+        Task<User?> GetByEmail(string Email);
         Task<bool> EditUser(User user);
         Task<bool> DeleteUser(string Id);
     }

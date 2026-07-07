@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\UserProfile\Query\**" />
     <Compile Remove="Servicies\**" />
+    <EmbeddedResource Remove="Features\UserProfile\Query\**" />
     <EmbeddedResource Remove="Servicies\**" />
+    <None Remove="Features\UserProfile\Query\**" />
     <None Remove="Servicies\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="12.5.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.7" />
   </ItemGroup>
@@ -23,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\User\Query\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
 
 </Project>

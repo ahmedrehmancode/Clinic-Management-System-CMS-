@@ -13,7 +13,7 @@ namespace CMS.Application.Mapping
     {
         public ClinicProfile()
         {
-            CreateMap<Clinic,User>().ReverseMap();
+            CreateMap<Clinic, User>().ReverseMap().ForMember(dest => dest.Id, opt => opt.Ignore()).ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id));
             CreateMap<Clinic,RegisterCommand>().ReverseMap();
         }
     }

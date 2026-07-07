@@ -11,7 +11,6 @@ namespace CMS.Application
     {
 
         IidentityRepository Identity { get; }
-
         IClinicRepository Clinic { get; }
         IUserRepository User { get; }
 

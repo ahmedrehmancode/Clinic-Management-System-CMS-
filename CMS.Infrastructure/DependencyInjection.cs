@@ -1,4 +1,5 @@
-﻿using CMS.Application.Interfaces.Repository;
+﻿using CMS.Application;
+using CMS.Application.Interfaces.Repository;
 using CMS.Infrastructre.Data;
 using CMS.Infrastructure.Data;
 using CMS.Infrastructure.Identity;
@@ -64,19 +65,26 @@ namespace CMS.Infrastructure
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
                 option =>
                 {
+                    var key = configuration.GetValue<string>("Jwt:Key") ?? throw new InvalidOperationException("JWT key is not configured");
                     option.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = configuration["Jwt:Issuer"],
-                        ValidAudience = configuration["Jwt:Audience"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration[""]))
+                        ValidIssuer = configuration["Jwt:Issuer"] ?? throw new InvalidOperationException("JWT issuer is not configured"),
+                        ValidAudience = configuration["Jwt:Audience"] ?? throw new InvalidOperationException("JWT audience is not configured"),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
                     };
                 }
                 );
             services.AddAutoMapper(cfg => { }, typeof(IdentityProfile).Assembly);
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IidentityRepository, IdentityRepository>();
+            services.AddScoped<IClinicRepository, ClinicRepository>();
+
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }

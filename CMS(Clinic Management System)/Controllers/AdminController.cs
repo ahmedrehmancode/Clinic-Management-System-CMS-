@@ -1,5 +1,4 @@
-﻿using CMS_Clinic_Management_System_.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;

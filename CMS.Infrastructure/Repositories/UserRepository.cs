@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using CMS.Application.DTOs;
-using CMS.Application.Features.User.Command.EditUser;
+using CMS.Application.Features.UserProfile.Command.EditUser;
 using CMS.Application.Interfaces.Repository;
 using CMS.Domain.Entities;
 using CMS.Infrastructure.Identity;
@@ -44,16 +43,16 @@ namespace CMS.Infrastructure.Repositories
 
         }
 
-        public async Task<User> GetByEmail(string Email)
+        public async Task<User?> GetByEmail(string Email)
         {
-            ApplicationUser ExestingUser = await _userManager.FindByNameAsync(Email);
+            ApplicationUser? ExestingUser = await _userManager.FindByNameAsync(Email);
             if (ExestingUser == null) return null;
             return _mapper.Map<User>(ExestingUser);
         }
 
-        public async Task<User> GetById(string Id)
+        public async Task<User?> GetById(string Id)
         {
-            ApplicationUser ExestingUser = await _userManager.FindByIdAsync(Id);
+            ApplicationUser? ExestingUser = await _userManager.FindByIdAsync(Id);
             if (ExestingUser == null) return null;
             return _mapper.Map<User>(ExestingUser);
 

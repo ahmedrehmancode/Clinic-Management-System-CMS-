@@ -1,4 +1,4 @@
-namespace CMS_Clinic_Management_System_.Models
+namespace CMS_Clinic_Management_System_.ViewModels
 {
     public class ErrorViewModel
     {

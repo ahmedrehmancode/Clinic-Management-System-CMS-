@@ -9,7 +9,7 @@ namespace CMS.Infrastructure.Identity
 {
     public class ApplicationUser : IdentityUser
     {
-        public string FullName { get; set; }
+        public required string FullName { get; set; }
 
         public bool? IsClinicAccount { get; set; }
 
